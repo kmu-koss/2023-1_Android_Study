@@ -3,8 +3,8 @@
 
 ## 스터디 진도
 스터디는 4월 6일부터 1학기 동안 진행됩니다. <br>
-스터디는 유튜브 '홍드로이드' 안드로이드(Android Java) 강의를 참고합니다.
-강의 링크 : <a href="https://www.youtube.com/watch?v=UNKlX9J6m-A&list=PLC51MBz7PMyyyR2l4gGBMFMMUfYmBkZxm"> 링크 </a> 
+스터디는 유튜브 '홍드로이드' 안드로이드(Android Java) 강의를 참고합니다. <br>
+강의 링크 : <a href="https://www.youtube.com/watch?v=UNKlX9J6m-A&list=PLC51MBz7PMyyyR2l4gGBMFMMUfYmBkZxm"> 강의 링크 </a> 
 
 ### 1주차
 - 날짜 : 2023-04-06 18:30 ~ 21:00
@@ -19,7 +19,7 @@
 
 ### 3주차
 - 지금까지 배운 내용을 토대로 과제 대체로 진행
-- 과제 링크 : <a href="https://www.notion.so/302dcc398113420480be07f6dc06290a"> 링크 </a>
+- 과제 링크 : <a href="https://www.notion.so/302dcc398113420480be07f6dc06290a"> 과제 설명 노션 </a>
 - 과제 제출
 
 ### 4주차
