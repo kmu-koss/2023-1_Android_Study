@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -40,20 +41,6 @@ public class a2 extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-//      sharedPreference하는 법
-//        SharedPreferences sharedPreferences = getSharedPreferences(shared, 0);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        String value = et_save.getText().toString();
-//        editor.putString("hong", value);
-        //editor.commit();
-
-//        food_list.add("치킨");
-//        food_list.add("피자");
-//        food_list.add("쌀국수");
-//        food_list.add("햄버거");
-//        food_list.add("부대찌개");
-        //String value = food_list.get().toString();
-        //editor.putString("food", value);
     }
 
     @Override
@@ -100,23 +87,50 @@ public class a2 extends AppCompatActivity {
             public void onClick(View view) {
                 list_data list_data1 = new list_data(R.drawable.chicken, "치킨");
                 arrayList.add(list_data1);
+                food_list.add("치킨");
 
                 list_data list_data2 = new list_data(R.drawable.pizza, "pizza");
                 arrayList.add(list_data2);
+                food_list.add("pizza");
 
                 list_data list_data3 = new list_data(R.drawable.ricenoodle, "쌀국수");
                 arrayList.add(list_data3);
+                food_list.add("쌀국수");
 
                 list_data list_data4 = new list_data(R.drawable.sss, "부대찌개");
                 arrayList.add(list_data4);
+                food_list.add("부대찌개");
 
                 list_data list_data5 = new list_data(R.drawable.burger, "햄버거");
                 arrayList.add(list_data5);
-
+                food_list.add("햄버거");
+                setStringArrayPref(getApplicationContext(), "list", food_list);
                 list_adapter.notifyDataSetChanged();
+
             }
         });
     }
+    private ArrayList getStringArrayPref(Context context, String key) {
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        String json = prefs.getString(key, null);
+        ArrayList urls = new ArrayList();
+
+        if (json != null) {
+            try {
+                JSONArray a = new JSONArray(json);
+
+                for (int i = 0; i < a.length(); i++) {
+                    String url = a.optString(i);
+                    urls.add(url);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return urls;
+    }
+
     private void setStringArrayPref(Context context, String key, ArrayList<String> values) {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);

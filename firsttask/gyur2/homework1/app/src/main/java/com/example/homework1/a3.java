@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,12 +50,10 @@ public class a3 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(a3.this, a4.class);
                 intent.putExtra("TEXT",food_edit.getText().toString());
+                String value = food_edit.getText().toString();
+                food_list = getStringArrayPref(getApplicationContext(),"list");
+                boolean answer = food_list.contains(value);
 
-                //sharedPreference 받기
-                SharedPreferences sharedPreferences = getSharedPreferences(shared, 0);
-                String value = sharedPreferences.getString("food list", "");
-                boolean answer = food_list.contains(intent);
-                
                 if (answer) {
                     Toast.makeText(view.getContext(), "정답입니다!", Toast.LENGTH_SHORT).show();
                 }else {
